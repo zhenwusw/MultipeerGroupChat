@@ -80,7 +80,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //     o  MUST NOT begin or end with a hyphen
     //     o  hyphens MUST NOT be adjacent to other hyphens
     //
-    func isDisplayNameAndServiceTypeValid() -> Bool { // TODO: fix exceptions
+    func isDisplayNameAndServiceTypeValid() -> Bool {
+        if displayNameTextField.text == nil ||
+            serviceTypeTextField.text == nil || // TODO: check for UTF-8
+            count(displayNameTextField.text!) > 63 ||
+            displayNameTextField.text!.isEmpty ||
+            count(serviceTypeTextField.text!) > 15 ||
+            serviceTypeTextField.text!.isEmpty { // TODO: check for ASCII
+            return false
+        }
+        
         let peerID = MCPeerID(displayName: (displayNameTextField.text))
         
         // Check if using this service type string causes a framework exception
