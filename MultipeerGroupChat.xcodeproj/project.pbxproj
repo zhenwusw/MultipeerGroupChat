@@ -27,8 +27,6 @@
 		7AEDCFC7174695EA00947F1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEDCFC6174695EA00947F1C /* Foundation.framework */; };
 		7AEDCFC9174695EA00947F1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEDCFC8174695EA00947F1C /* CoreGraphics.framework */; };
 		7AEDCFCF174695EA00947F1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFCD174695EA00947F1C /* InfoPlist.strings */; };
-		7AEDCFD1174695EA00947F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDCFD0174695EA00947F1C /* main.m */; };
-		7AEDCFD5174695EA00947F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDCFD4174695EA00947F1C /* AppDelegate.m */; };
 		7AEDCFD7174695EA00947F1C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFD6174695EA00947F1C /* Default.png */; };
 		7AEDCFD9174695EA00947F1C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFD8174695EA00947F1C /* Default@2x.png */; };
 		7AEDCFDD174695EA00947F1C /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFDC174695EA00947F1C /* Default-Portrait~ipad.png */; };
@@ -36,10 +34,11 @@
 		7AEDCFE1174695EB00947F1C /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFE0174695EB00947F1C /* Default-Landscape~ipad.png */; };
 		7AEDCFE3174695EB00947F1C /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFE2174695EB00947F1C /* Default-Landscape@2x~ipad.png */; };
 		7AEDCFE6174695EB00947F1C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFE4174695EB00947F1C /* MainStoryboard_iPhone.storyboard */; };
-		7AEDCFEC174695EB00947F1C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDCFEB174695EB00947F1C /* MainViewController.m */; };
 		7AEDCFF51746993000947F1C /* SessionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDCFF41746993000947F1C /* SessionContainer.m */; };
 		7AEDCFFA1746BD0B00947F1C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDCFF91746BD0B00947F1C /* SettingsViewController.m */; };
 		7AEDCFFF1746D5FB00947F1C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEDCFFE1746D5FB00947F1C /* MultipeerConnectivity.framework */; };
+		AB1151F41ADE46F900CEA2A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1151F31ADE46F900CEA2A1 /* AppDelegate.swift */; };
+		AB1152241ADE47ED00CEA2A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1152231ADE47ED00CEA2A1 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,10 +69,7 @@
 		7AEDCFC8174695EA00947F1C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7AEDCFCC174695EA00947F1C /* MultipeerGroupChat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultipeerGroupChat-Info.plist"; sourceTree = "<group>"; };
 		7AEDCFCE174695EA00947F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7AEDCFD0174695EA00947F1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AEDCFD2174695EA00947F1C /* MultipeerGroupChat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultipeerGroupChat-Prefix.pch"; sourceTree = "<group>"; };
-		7AEDCFD3174695EA00947F1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7AEDCFD4174695EA00947F1C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7AEDCFD6174695EA00947F1C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		7AEDCFD8174695EA00947F1C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7AEDCFDC174695EA00947F1C /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
@@ -81,13 +77,14 @@
 		7AEDCFE0174695EB00947F1C /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		7AEDCFE2174695EB00947F1C /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		7AEDCFE5174695EB00947F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		7AEDCFEA174695EB00947F1C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		7AEDCFEB174695EB00947F1C /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7AEDCFF31746993000947F1C /* SessionContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionContainer.h; sourceTree = "<group>"; };
 		7AEDCFF41746993000947F1C /* SessionContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionContainer.m; sourceTree = "<group>"; };
 		7AEDCFF81746BD0B00947F1C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		7AEDCFF91746BD0B00947F1C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		7AEDCFFE1746D5FB00947F1C /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		AB1151F21ADE46F800CEA2A1 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		AB1151F31ADE46F900CEA2A1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB1152231ADE47ED00CEA2A1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,10 +136,10 @@
 				7AEDCFF61746993800947F1C /* Model */,
 				7AEDCFF21746969600947F1C /* View */,
 				7AEDCFF71746BA6200947F1C /* Controller */,
-				7AEDCFD3174695EA00947F1C /* AppDelegate.h */,
-				7AEDCFD4174695EA00947F1C /* AppDelegate.m */,
 				7A3DD79217A716DD00A89D93 /* Images.xcassets */,
 				7AEDCFCB174695EA00947F1C /* Supporting Files */,
+				AB1151F31ADE46F900CEA2A1 /* AppDelegate.swift */,
+				AB1151F21ADE46F800CEA2A1 /* Bridging-Header.h */,
 			);
 			name = MultipeerGroupChat;
 			path = AdhocGroupChat;
@@ -162,7 +159,6 @@
 				6403E6D41748500000BDFEC7 /* PhotoButton@2x.png */,
 				7AEDCFCC174695EA00947F1C /* MultipeerGroupChat-Info.plist */,
 				7AEDCFCD174695EA00947F1C /* InfoPlist.strings */,
-				7AEDCFD0174695EA00947F1C /* main.m */,
 				7AEDCFD2174695EA00947F1C /* MultipeerGroupChat-Prefix.pch */,
 				7AEDCFD6174695EA00947F1C /* Default.png */,
 				7AEDCFD8174695EA00947F1C /* Default@2x.png */,
@@ -205,8 +201,7 @@
 		7AEDCFF71746BA6200947F1C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7AEDCFEA174695EB00947F1C /* MainViewController.h */,
-				7AEDCFEB174695EB00947F1C /* MainViewController.m */,
+				AB1152231ADE47ED00CEA2A1 /* MainViewController.swift */,
 				7AEDCFF81746BD0B00947F1C /* SettingsViewController.h */,
 				7AEDCFF91746BD0B00947F1C /* SettingsViewController.m */,
 			);
@@ -294,16 +289,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB1151F41ADE46F900CEA2A1 /* AppDelegate.swift in Sources */,
 				7A8A6E9A177BCFCC005E73B6 /* ProgressObserver.m in Sources */,
 				7A39F1E1178494E3005F51B8 /* ProgressView.m in Sources */,
-				7AEDCFD5174695EA00947F1C /* AppDelegate.m in Sources */,
-				7AEDCFD1174695EA00947F1C /* main.m in Sources */,
 				7AEDCFF51746993000947F1C /* SessionContainer.m in Sources */,
-				7AEDCFEC174695EB00947F1C /* MainViewController.m in Sources */,
 				7AE14A1E1778F3EE009C8532 /* MessageView.m in Sources */,
 				7AEDCFFA1746BD0B00947F1C /* SettingsViewController.m in Sources */,
 				7A39F1DE17839810005F51B8 /* ImageView.m in Sources */,
 				7A7695571746ED7E008A2DBF /* Transcript.m in Sources */,
+				AB1152241ADE47ED00CEA2A1 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,14 +398,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdhocGroupChat/MultipeerGroupChat-Prefix.pch";
 				INFOPLIST_FILE = "AdhocGroupChat/MultipeerGroupChat-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MultipeerGroupChat;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "AdhocGroupChat/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -422,14 +420,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdhocGroupChat/MultipeerGroupChat-Prefix.pch";
 				INFOPLIST_FILE = "AdhocGroupChat/MultipeerGroupChat-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MultipeerGroupChat;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "AdhocGroupChat/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

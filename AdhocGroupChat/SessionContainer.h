@@ -46,6 +46,8 @@
  
  */
 
+@import MultipeerConnectivity;
+
 #import <Foundation/Foundation.h>
 
 @class Transcript;
