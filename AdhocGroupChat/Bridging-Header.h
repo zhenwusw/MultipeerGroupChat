@@ -3,7 +3,6 @@
 //
 
 #import "SessionContainer.h"
-#import "SettingsViewController.h"
 #import "Transcript.h"
 #import "MessageView.h"
 #import "ImageView.h"

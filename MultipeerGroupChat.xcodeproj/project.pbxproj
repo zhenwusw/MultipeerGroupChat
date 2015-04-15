@@ -35,10 +35,10 @@
 		7AEDCFE3174695EB00947F1C /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFE2174695EB00947F1C /* Default-Landscape@2x~ipad.png */; };
 		7AEDCFE6174695EB00947F1C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDCFE4174695EB00947F1C /* MainStoryboard_iPhone.storyboard */; };
 		7AEDCFF51746993000947F1C /* SessionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDCFF41746993000947F1C /* SessionContainer.m */; };
-		7AEDCFFA1746BD0B00947F1C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDCFF91746BD0B00947F1C /* SettingsViewController.m */; };
 		7AEDCFFF1746D5FB00947F1C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEDCFFE1746D5FB00947F1C /* MultipeerConnectivity.framework */; };
 		AB1151F41ADE46F900CEA2A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1151F31ADE46F900CEA2A1 /* AppDelegate.swift */; };
 		AB1152241ADE47ED00CEA2A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1152231ADE47ED00CEA2A1 /* MainViewController.swift */; };
+		AB1152281ADE97E700CEA2A1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1152271ADE97E700CEA2A1 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,12 +79,11 @@
 		7AEDCFE5174695EB00947F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		7AEDCFF31746993000947F1C /* SessionContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionContainer.h; sourceTree = "<group>"; };
 		7AEDCFF41746993000947F1C /* SessionContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionContainer.m; sourceTree = "<group>"; };
-		7AEDCFF81746BD0B00947F1C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		7AEDCFF91746BD0B00947F1C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		7AEDCFFE1746D5FB00947F1C /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		AB1151F21ADE46F800CEA2A1 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		AB1151F31ADE46F900CEA2A1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB1152231ADE47ED00CEA2A1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AB1152271ADE97E700CEA2A1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,8 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				AB1152231ADE47ED00CEA2A1 /* MainViewController.swift */,
-				7AEDCFF81746BD0B00947F1C /* SettingsViewController.h */,
-				7AEDCFF91746BD0B00947F1C /* SettingsViewController.m */,
+				AB1152271ADE97E700CEA2A1 /* SettingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -292,9 +290,9 @@
 				AB1151F41ADE46F900CEA2A1 /* AppDelegate.swift in Sources */,
 				7A8A6E9A177BCFCC005E73B6 /* ProgressObserver.m in Sources */,
 				7A39F1E1178494E3005F51B8 /* ProgressView.m in Sources */,
+				AB1152281ADE97E700CEA2A1 /* SettingsViewController.swift in Sources */,
 				7AEDCFF51746993000947F1C /* SessionContainer.m in Sources */,
 				7AE14A1E1778F3EE009C8532 /* MessageView.m in Sources */,
-				7AEDCFFA1746BD0B00947F1C /* SettingsViewController.m in Sources */,
 				7A39F1DE17839810005F51B8 /* ImageView.m in Sources */,
 				7A7695571746ED7E008A2DBF /* Transcript.m in Sources */,
 				AB1152241ADE47ED00CEA2A1 /* MainViewController.swift in Sources */,

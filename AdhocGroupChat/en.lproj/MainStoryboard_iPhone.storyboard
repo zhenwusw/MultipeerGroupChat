@@ -9,7 +9,7 @@
         <!--Create Room-->
         <scene sceneID="1fF-lT-2sX">
             <objects>
-                <viewController id="1kU-HA-vKc" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController id="1kU-HA-vKc" customClass="SettingsViewController" customModule="MultipeerGroupChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YhU-9i-wfV"/>
                         <viewControllerLayoutGuide type="bottom" id="9L8-Bv-qRP"/>
@@ -52,13 +52,13 @@
                     <navigationItem key="navigationItem" title="Create Room" id="fOf-Ar-zIB">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="clO-Rg-TEU">
                             <connections>
-                                <action selector="doneTapped:" destination="1kU-HA-vKc" id="MZE-mE-UdL"/>
+                                <action selector="doneTapped:" destination="1kU-HA-vKc" id="6xo-Jt-deg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="displayNameTextField" destination="c8j-pD-h9c" id="C10-Nd-mhT"/>
-                        <outlet property="serviceTypeTextField" destination="9U9-p5-jEg" id="8bc-nC-5gS"/>
+                        <outlet property="displayNameTextField" destination="c8j-pD-h9c" id="m2H-tz-Gde"/>
+                        <outlet property="serviceTypeTextField" destination="9U9-p5-jEg" id="wok-Qo-AiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFm-yu-1lf" userLabel="First Responder" sceneMemberID="firstResponder"/>
