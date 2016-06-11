@@ -149,17 +149,17 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
     // MARK: - MCBrowserViewControllerDelegate methods
     
     // Override this method to filter out peers based on application specific needs
-    func browserViewController(browserViewController: MCBrowserViewController!, shouldPresentNearbyPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) -> Bool {
+    func browserViewController(browserViewController: MCBrowserViewController, shouldPresentNearbyPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) -> Bool {
         return true
     }
     
     // Override this to know when the user has pressed the "done" button in the MCBrowserViewController
-    func browserViewControllerDidFinish(browserViewController: MCBrowserViewController!) {
+    func browserViewControllerDidFinish(browserViewController: MCBrowserViewController) {
         browserViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // Override this to know when the user has pressed the "cancel" button in the MCBrowserViewController
-    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController!) {
+    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController) {
         browserViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -237,7 +237,7 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
         let cell: UITableViewCell
         if transcript.imageUrl != nil {
             // It's a completed image
-            cell = tableView.dequeueReusableCellWithIdentifier("Image Cell", forIndexPath:indexPath) as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("Image Cell", forIndexPath:indexPath) 
             // Get the image view
             let imageView = cell.viewWithTag(Int(IMAGE_VIEW_TAG)) as! ImageView
             // Set up the image view for this transcript
@@ -245,14 +245,14 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
         }
         else if transcript.progress != nil {
             // It's a resource transfer in progress
-            cell = tableView.dequeueReusableCellWithIdentifier("Progress Cell", forIndexPath:indexPath) as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("Progress Cell", forIndexPath:indexPath) 
             let progressView = cell.viewWithTag(Int(PROGRESS_VIEW_TAG)) as! ProgressView
             // Set up the progress view for this transcript
             progressView.transcript = transcript
         }
         else {
             // Get the associated cell type for messages
-            cell = tableView.dequeueReusableCellWithIdentifier("Message Cell", forIndexPath:indexPath) as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("Message Cell", forIndexPath:indexPath) 
             // Get the message view
             let messageView = cell.viewWithTag(Int(MESSAGE_VIEW_TAG)) as! MessageView
             // Set up the message view for this transcript
@@ -281,7 +281,7 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
     // Action method when pressing the "browse" (search icon).  It presents the MCBrowserViewController: a framework UI which enables users to invite and connect to other peers with the same room name (aka service type).
     @IBAction func browseForPeers(sender: AnyObject?) {
         // Instantiate and present the MCBrowserViewController
-        let browserViewController = MCBrowserViewController(serviceType: serviceType, session: sessionContainer.session)
+        let browserViewController = MCBrowserViewController(serviceType: serviceType!, session: sessionContainer.session)
         
         browserViewController.delegate = self
         browserViewController.minimumNumberOfPeers = kMCSessionMinimumNumberOfPeers
@@ -313,7 +313,7 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
     }
     
     // Override this delegate method to get the image that the user has selected and send it view Multipeer Connectivity to the connected peers.
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         // Don't block the UI when writing the image to documents
         dispatch_async(dispatch_get_global_queue(0, 0), {
@@ -329,10 +329,12 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
             let imageName = String(format: "image-%@.JPG", inFormat.stringFromDate(NSDate()))
             // Create a file path to our documents directory
             let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-            let filePath = paths[0].stringByAppendingPathComponent(imageName)
-            pngData.writeToFile(filePath, atomically: true) // Write the file
+            let filePath = NSURL(fileURLWithPath: paths[0]).URLByAppendingPathComponent(imageName)
+            let writePath = NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent("instagram.igo")
+            pngData!.writeToFile(filePath.path!, atomically: true) // Write the file
+          
             // Get a URL for this file resource
-            let imageUrl = NSURL.fileURLWithPath(filePath)
+            let imageUrl = NSURL.fileURLWithPath(filePath.path!)
             
             // Send the resource to the remote peers and get the resulting progress transcript
             let transcript = self.sessionContainer.sendImage(imageUrl)
@@ -348,7 +350,7 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
     
     // Override to dynamically enable/disable the send button based on user typing
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let length = count(messageComposeTextField.text) - range.length + count(string)
+        let length = messageComposeTextField.text!.characters.count - range.length + string.characters.count
         if length > 0 {
             self.sendMessageButton.enabled = true;
         }
@@ -366,7 +368,7 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
     // Delegate method called when the message text field is resigned.
     func textFieldDidEndEditing(textField: UITextField) {
         // Check if there is any message to send
-        if (count(messageComposeTextField.text) > 0) {
+        if (messageComposeTextField.text!.characters.count > 0) {
             // Resign the keyboard
             textField.resignFirstResponder()
             
@@ -391,9 +393,9 @@ class MainViewController: UITableViewController, MCBrowserViewControllerDelegate
         let userInfo = notification.userInfo!
         
         // Get animation info from userInfo
-        var animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
-        var animationCurve = UIViewAnimationCurve(rawValue: userInfo[UIKeyboardAnimationCurveUserInfoKey] as! Int)!
-        var keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
+        let animationCurve = UIViewAnimationCurve(rawValue: userInfo[UIKeyboardAnimationCurveUserInfoKey] as! Int)!
+        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
         // Animate up or down
         UIView.beginAnimations(nil, context: nil)

@@ -233,6 +233,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AGC;
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Apple, Inc.";
 			};

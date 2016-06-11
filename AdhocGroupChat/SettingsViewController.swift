@@ -83,19 +83,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     func isDisplayNameAndServiceTypeValid() -> Bool {
         if displayNameTextField.text == nil ||
             serviceTypeTextField.text == nil || // TODO: check for UTF-8
-            count(displayNameTextField.text!) > 63 ||
+            (displayNameTextField.text!).characters.count > 63 ||
             displayNameTextField.text!.isEmpty ||
-            count(serviceTypeTextField.text!) > 15 ||
+            (serviceTypeTextField.text!).characters.count > 15 ||
             serviceTypeTextField.text!.isEmpty { // TODO: check for ASCII
             return false
         }
         
-        let peerID = MCPeerID(displayName: (displayNameTextField.text))
+        let peerID = MCPeerID(displayName: (displayNameTextField.text!))
         
         // Check if using this service type string causes a framework exception
-        let advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: serviceTypeTextField.text)
+        let advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: serviceTypeTextField.text!)
         
-        println("Room Name [\(advertiser.serviceType)] (aka service type) and display name [\(peerID.displayName)] are valid")
+        print("Room Name [\(advertiser.serviceType)] (aka service type) and display name [\(peerID.displayName)] are valid")
         // all exception checks passed
         return true;
     }
